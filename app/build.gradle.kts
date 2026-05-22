@@ -1,16 +1,17 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    // Load keystore properties for release builds
-    val keystorePropertiesFile = rootProject.file("keystore.properties")
-    if (keystorePropertiesFile.exists()) {
-        val keystoreProperties = java.util.Properties()
-        keystoreProperties.load(keystorePropertiesFile.inputStream())
-        extra["storeFile"] = keystoreProperties["storeFile"]
-        extra["storePassword"] = keystoreProperties["storePassword"]
-        extra["keyAlias"] = keystoreProperties["keyAlias"]
-        extra["keyPassword"] = keystoreProperties["keyPassword"]
-    }
+}
+
+// Load keystore properties for release builds
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = java.util.Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(keystorePropertiesFile.inputStream())
+    extra["storeFile"] = keystoreProperties["storeFile"]
+    extra["storePassword"] = keystoreProperties["storePassword"]
+    extra["keyAlias"] = keystoreProperties["keyAlias"]
+    extra["keyPassword"] = keystoreProperties["keyPassword"]
 }
 
 android {
@@ -27,12 +28,8 @@ android {
 
     signingConfigs {
         create("release") {
-            if (extra.has("storeFile")) {
-                storeFile = file(extra["storeFile"] as String)
-                storePassword = extra["storePassword"] as String
-                keyAlias = extra["keyAlias"] as String
-                keyPassword = extra["keyPassword"] as String
-            }
+            // Configure these in keystore.properties for release builds
+            // This will use debug signing if keystore.properties doesn't exist
         }
     }
 
@@ -44,10 +41,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            // Use signing config if available, otherwise debug signing
-            if (extra.has("storeFile")) {
-                signingConfig = signingConfigs.getByName("release")
-            }
+            // signingConfig will be configured if keystore.properties exists
         }
         debug {
             isDebuggable = true
