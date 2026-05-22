@@ -17,13 +17,16 @@ android {
 
     signingConfigs {
         create("release") {
-            // Configure signing manually for release builds
-            // Use: Build → Generate Signed Bundle / APK in Android Studio
+            storeFile = file("../app-release-key.jks")
+            storePassword = "HelloWorld123!"
+            keyAlias = "release-key"
+            keyPassword = "HelloWorld123!"
         }
     }
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
