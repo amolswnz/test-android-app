@@ -3,17 +3,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
-// Load keystore properties for release builds
-val keystorePropertiesFile = rootProject.file("keystore.properties")
-val keystoreProperties = java.util.Properties()
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(keystorePropertiesFile.inputStream())
-    extra["storeFile"] = keystoreProperties["storeFile"]
-    extra["storePassword"] = keystoreProperties["storePassword"]
-    extra["keyAlias"] = keystoreProperties["keyAlias"]
-    extra["keyPassword"] = keystoreProperties["keyPassword"]
-}
-
 android {
     namespace = "com.example.helloworld"
     compileSdk = 34
@@ -28,8 +17,8 @@ android {
 
     signingConfigs {
         create("release") {
-            // Configure these in keystore.properties for release builds
-            // This will use debug signing if keystore.properties doesn't exist
+            // Configure signing manually for release builds
+            // Use: Build → Generate Signed Bundle / APK in Android Studio
         }
     }
 
@@ -41,7 +30,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            // signingConfig will be configured if keystore.properties exists
         }
         debug {
             isDebuggable = true
