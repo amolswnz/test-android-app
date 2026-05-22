@@ -1,7 +1,7 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<!-- app/src/main/AndroidManifest.xml -->
 3<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-4    package="com.example.helloworld.debug"
+4    package="com.ngaw.helloworld.debug"
 5    android:versionCode="1"
 6    android:versionName="1.0" >
 7
@@ -11,12 +11,12 @@
 11
 12    <permission
 12-->[androidx.core:core:1.12.0] /Users/amolw/.gradle/caches/transforms-3/113b94108af1641fa44b9e2bbbe14371/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-13        android:name="com.example.helloworld.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+13        android:name="com.ngaw.helloworld.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 13-->[androidx.core:core:1.12.0] /Users/amolw/.gradle/caches/transforms-3/113b94108af1641fa44b9e2bbbe14371/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
 14        android:protectionLevel="signature" />
 14-->[androidx.core:core:1.12.0] /Users/amolw/.gradle/caches/transforms-3/113b94108af1641fa44b9e2bbbe14371/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 15
-16    <uses-permission android:name="com.example.helloworld.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+16    <uses-permission android:name="com.ngaw.helloworld.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 16-->[androidx.core:core:1.12.0] /Users/amolw/.gradle/caches/transforms-3/113b94108af1641fa44b9e2bbbe14371/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 16-->[androidx.core:core:1.12.0] /Users/amolw/.gradle/caches/transforms-3/113b94108af1641fa44b9e2bbbe14371/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 17
@@ -40,8 +40,8 @@
 27-->/Users/amolw/personal/test-andriod-app/app/src/main/AndroidManifest.xml:11:9-48
 28        <activity
 28-->/Users/amolw/personal/test-andriod-app/app/src/main/AndroidManifest.xml:12:9-19:20
-29            android:name="com.example.helloworld.MainActivity"
-29-->/Users/amolw/personal/test-andriod-app/app/src/main/AndroidManifest.xml:13:13-41
+29            android:name="com.ngaw.helloworld.MainActivity"
+29-->/Users/amolw/personal/test-andriod-app/app/src/main/AndroidManifest.xml:13:13-60
 30            android:exported="true" >
 30-->/Users/amolw/personal/test-andriod-app/app/src/main/AndroidManifest.xml:14:13-36
 31            <intent-filter>
@@ -60,7 +60,7 @@
 38-->[androidx.emoji2:emoji2:1.2.0] /Users/amolw/.gradle/caches/transforms-3/246823b19ad8014fde71a1ed98e5f797/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 39            android:name="androidx.startup.InitializationProvider"
 39-->[androidx.emoji2:emoji2:1.2.0] /Users/amolw/.gradle/caches/transforms-3/246823b19ad8014fde71a1ed98e5f797/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-40            android:authorities="com.example.helloworld.debug.androidx-startup"
+40            android:authorities="com.ngaw.helloworld.debug.androidx-startup"
 40-->[androidx.emoji2:emoji2:1.2.0] /Users/amolw/.gradle/caches/transforms-3/246823b19ad8014fde71a1ed98e5f797/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
 41            android:exported="false" >
 41-->[androidx.emoji2:emoji2:1.2.0] /Users/amolw/.gradle/caches/transforms-3/246823b19ad8014fde71a1ed98e5f797/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37

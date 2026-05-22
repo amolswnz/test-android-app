@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.helloworld.app-mergeDebugResources-29:/values-te/values-te.xml",
+            "outputFile": "com.ngaw.helloworld.app-mergeDebugResources-29:/values-te/values-te.xml",
             "map": [
                 {
                     "source": "/Users/amolw/.gradle/caches/transforms-3/113b94108af1641fa44b9e2bbbe14371/transformed/core-1.12.0/res/values-te/values-te.xml",

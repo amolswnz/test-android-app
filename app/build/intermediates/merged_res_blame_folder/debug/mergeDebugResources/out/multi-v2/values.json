@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.helloworld.app-mergeDebugResources-29:/values/values.xml",
+            "outputFile": "com.ngaw.helloworld.app-mergeDebugResources-29:/values/values.xml",
             "map": [
                 {
                     "source": "/Users/amolw/.gradle/caches/transforms-3/bf2731c90c8672279cea2b7f16d8b1a8/transformed/recyclerview-1.1.0/res/values/values.xml",

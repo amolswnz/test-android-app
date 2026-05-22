@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.helloworld.app-mergeDebugResources-29:/values-uz/values-uz.xml",
+            "outputFile": "com.ngaw.helloworld.app-mergeDebugResources-29:/values-uz/values-uz.xml",
             "map": [
                 {
                     "source": "/Users/amolw/.gradle/caches/transforms-3/45f0078918758a42d1f8e9c6e56cbc25/transformed/material-1.11.0/res/values-uz/values-uz.xml",
