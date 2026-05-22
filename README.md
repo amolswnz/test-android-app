@@ -16,6 +16,8 @@ A simple Android application that displays "Hello World!" on the screen.
 - JDK 8 or later
 
 ### Building the App
+
+**Option 1: Using Android Studio**
 1. Clone the repository:
    ```bash
    git clone https://github.com/amolswnz/test-android-app.git
@@ -27,6 +29,30 @@ A simple Android application that displays "Hello World!" on the screen.
 
 3. Build the app:
    - Build → Build Bundle(s) / APK(s) → Build APK(s)
+
+**Option 2: Using Command Line**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/amolswnz/test-android-app.git
+   cd test-android-app
+   ```
+
+2. Build debug APK:
+   ```bash
+   ./gradlew assembleDebug
+   ```
+
+3. Build release APK:
+   ```bash
+   ./gradlew assembleRelease
+   ```
+
+4. Build release bundle (for Google Play):
+   ```bash
+   ./gradlew bundleRelease
+   ```
+
+The Gradle wrapper is included, so you don't need to install Gradle separately.
 
 ### Running on Emulator/Device
 1. Connect your Android device or start an emulator
@@ -41,12 +67,40 @@ A simple Android application that displays "Hello World!" on the screen.
 ### Steps to Publish
 
 #### 1. Generate Signed Bundle/APK
+
+**Option 1: Using Android Studio**
 ```bash
 # In Android Studio:
 # Build → Generate Signed Bundle / APK
 # Select "Android App Bundle" (recommended) or "APK"
 # Create or use existing keystore
 ```
+
+**Option 2: Using Command Line**
+1. Run the automated keystore generation script:
+   ```bash
+   ./generate-keystore.sh
+   ```
+
+2. Or manually create keystore:
+   ```bash
+   keytool -genkey -v -keystore your-keystore.jks \
+     -keyalg RSA -keysize 2048 -validity 10000 \
+     -alias your-key-alias
+   ```
+
+3. Create keystore.properties file:
+   ```bash
+   cp keystore.properties.example keystore.properties
+   # Edit keystore.properties with your actual values
+   ```
+
+4. Generate release bundle:
+   ```bash
+   ./gradlew bundleRelease
+   ```
+
+Output: `app/build/outputs/bundle/release/app-release.aab`
 
 #### 2. Create Keystore (if you don't have one)
 ```bash
